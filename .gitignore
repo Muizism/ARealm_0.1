@@ -2,6 +2,8 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+FirebaseCppApp-11_4_0.bundle
+
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
