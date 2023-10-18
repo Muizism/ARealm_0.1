@@ -74,4 +74,9 @@ public class Firebase_Database_Manager : MonoBehaviour
         // Update the online status of the user in the database based on user interaction.
         reference.Child("users").Child(userId).SetValueAsync(isOnline);
     }
+
+    internal void Initialize()
+    {
+        throw new System.NotImplementedException();
+    }
 }

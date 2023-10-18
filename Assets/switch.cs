@@ -1,25 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CanvasSwitcher : MonoBehaviour
+public class CanvasNavigation : MonoBehaviour
 {
-    public Canvas canvas1; // Reference to the initial canvas.
-    public Canvas canvas2; // Reference to the canvas to switch to.
+    public GameObject canvasToHide; // Reference to the canvas to hide (Canvas1).
+    public GameObject canvasToShow; // Reference to the canvas to show (Canvas2).
 
-    private bool isCanvas1Active = true;
+    // Reference to the UI Button that triggers the navigation.
+    public Button button;
 
     private void Start()
     {
-        // Ensure the initial canvas is active, and the other is not.
-        canvas1.gameObject.SetActive(true);
-        canvas2.gameObject.SetActive(false);
+        // Attach the button click event to the NavigateToCanvas method.
+        button.onClick.AddListener(NavigateToCanvas);
     }
 
-    public void SwitchCanvas()
+    public void NavigateToCanvas()
     {
-        // Toggle the active state of the canvases.
-        isCanvas1Active = !isCanvas1Active;
-        canvas1.gameObject.SetActive(isCanvas1Active);
-        canvas2.gameObject.SetActive(!isCanvas1Active);
+        // Deactivate the initial canvas.
+        canvasToHide.SetActive(false);
+
+        // Activate the destination canvas.
+        canvasToShow.SetActive(true);
     }
 }

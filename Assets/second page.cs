@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class CloseButtonController : MonoBehaviour
 {
-    public Button closeButton;
+    public Image closeButton; // Reference to the Image component
     public GameObject secondPageCanvas; // Reference to the canvas or object of the second page
 
     private void Start()
     {
-        // Attach a click event listener to the "Close" button
-        closeButton.onClick.AddListener(CloseSecondPage);
+        // Attach a click event listener to the "Close" image
+        closeButton.GetComponent<Button>().onClick.AddListener(CloseSecondPage);
     }
 
     private void CloseSecondPage()
